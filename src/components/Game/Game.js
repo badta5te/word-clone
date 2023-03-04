@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { WORDS } from '../../data'
-import { sample } from '../../utils'
+import { sample } from '../../utils/utils'
 import Input from '../Input'
 import Results from '../Results'
 
