@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Input({ handleGuess }) {
+function Input({ handleGuess, disabledInput }) {
   const [guess, setGuess] = React.useState('')
 
   const onSubmitHandler = (e) => {
@@ -19,6 +19,7 @@ function Input({ handleGuess }) {
         pattern="\w{5,5}"
         title="5 letter word required"
         value={guess}
+        disabled={disabledInput}
         onChange={(e) => {
           setGuess(e.target.value.toUpperCase())
         }}
