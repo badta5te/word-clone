@@ -1,0 +1,91 @@
+parser: babel-eslint
+env:
+  es6: true
+  node: true
+  jest: true
+  browser: true
+extends:
+  - airbnb
+  - prettier
+  - prettier/react
+  - plugin:react-hooks/recommended
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - prettier
+  - import
+  - react
+settings:
+  import/resolver:
+    alias:
+      - - '@src'
+        - './src'
+      - - '@assets'
+        - './src/assets'
+      - - '@images'
+        - './src/assets/images'
+      - - '@styles'
+        - './src/assets/styles'
+      - - '@components'
+        - './src/components'
+      - - '@atoms'
+        - './src/components/atoms'
+      - - '@molecules'
+        - './src/components/molecules'
+      - - '@organisms'
+        - './src/components/organisms'
+      - - '@templates'
+        - './src/components/templates'
+      - - '@pages'
+        - './src/components/pages'
+      - - '@locales'
+        - './src/locales'
+      - - '@utils'
+        - './src/utils'
+rules:
+  prettier/prettier:
+    - error
+    - semi: false
+      singleQuote: true
+      tabWidth: 2
+      trailingComma: all
+      printWidth: 100
+    - usePrettierrc: false
+  max-len:
+    - error
+    - code: 120
+  semi:
+    - error
+    - never
+  import/prefer-default-export: off
+  react/prop-types:
+    - 1
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+        - .js
+        - .jsx
+  import/order:
+    - warn
+    - alphabetize:
+        order: asc
+        caseInsensitive: true
+      groups:
+        - - builtin
+          - external
+        - object
+        - internal
+      pathGroups:
+        - pattern: '@components/**'
+          group: internal
+          position: before
+        - pattern: '@utils/**'
+          group: internal
+          position: before
+      newlines-between: always

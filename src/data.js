@@ -49,4 +49,4 @@ export const WORDS = [
   'RADIO',
   'ROYAL',
   'HONEY',
-];
+]
