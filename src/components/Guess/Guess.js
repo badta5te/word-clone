@@ -1,16 +1,18 @@
 import React from "react"
 
-import {range} from '../../utils/utils'
+import { checkGuess } from '../../utils/game-helpers'
+import { range } from '../../utils/utils'
 
-function Guess({ guess }) {
-  const letters = guess ? guess.split('') : range(5).map(() => undefined)
+function Guess({ guess, answer }) {
+  const checked = checkGuess(guess, answer)
 
   return (
     <p className="guess">
-      {letters?.map((letter, index) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <span className="cell" key={`${index}-${letter}`}>{letter}</span>
-      })}
+      {range(5).map((num) => (
+        <span key={num} className={checked ? `cell ${checked[num].status}` : 'cell'}>
+          {checked ? checked[num].letter : undefined}
+        </span>
+      ))}
     </p>
   )
 }
