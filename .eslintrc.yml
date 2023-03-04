@@ -49,14 +49,14 @@ settings:
       - - '@utils'
         - './src/utils'
 rules:
-  prettier/prettier:
-    - error
-    - semi: false
-      singleQuote: true
-      tabWidth: 2
-      trailingComma: all
-      printWidth: 100
-    - usePrettierrc: false
+#  prettier/prettier:
+#    - error
+#    - semi: false
+#      singleQuote: true
+#      tabWidth: 2
+#      trailingComma: all
+#      printWidth: 100
+#    - usePrettierrc: false
   max-len:
     - error
     - code: 120
