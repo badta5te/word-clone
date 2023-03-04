@@ -1,15 +1,14 @@
 import React from "react"
 
-function Results({ guesses}) {
+import { NUM_OF_GUESSES_ALLOWED } from '../../utils/constants'
+import { range } from '../../utils/utils'
+import Guess from '../Guess'
+
+function Results({ guesses }) {
   return (
     <div className="guess-results">
-      {guesses?.map((guess, index) => {
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          <p className="guess" key={index}>
-            {guess}
-          </p>
-        )
+      {range(NUM_OF_GUESSES_ALLOWED).map((el) => {
+        return <Guess key={el} guess={guesses[el]} />
       })}
     </div>
   )
